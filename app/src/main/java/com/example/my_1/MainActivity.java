@@ -15,24 +15,24 @@ public class MainActivity extends AppCompatActivity {
 
 
     private OWRewardedAdListener rewardedAdListener = new OWRewardedAdListener() {
-
         @Override
         public void onAdReady() {
+            // 广告已经准备好，可以进行播放
 
         }
 
         @Override
-        public void onAdShow(String s) {
+        public void onAdShow(String tag) {
 
         }
 
         @Override
-        public void onAdClick(String s) {
+        public void onAdClick(String tag) {
 
         }
 
         @Override
-        public void onAdClose(String s, OnewayAdCloseType onewayAdCloseType) {
+        public void onAdClose(String tag, OnewayAdCloseType onewayVideoCloseType) {
 
         }
 
@@ -66,11 +66,12 @@ public class MainActivity extends AppCompatActivity {
         initOnewaySdk();
 
         if (OWRewardedAd.isReady()) {
-            OWRewardedAd.show(this, "rewarded");
-            Toast.makeText(this, "广告已经准备好了", Toast.LENGTH_SHORT).show();
+            OWRewardedAd.show(this, "rewarded ad 2");
+
         } else {
             Toast.makeText(this, "广告还未准备好", Toast.LENGTH_SHORT).show();
         }
+
     }
 
 }
